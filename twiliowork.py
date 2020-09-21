@@ -4,15 +4,15 @@ from twilio.rest import Client
 from datetime import date
 from apscheduler.schedulers.blocking import BlockingScheduler
  
-account_sid = 'ACfc3cc42d36a670781b2c598490adf4db' 
-auth_token = '140c5ac0cf6941f094a711643a3bf9e2' 
+account_sid = '*******************************'# your account_sid form twilio 
+auth_token = '*******************************' #  your auth_token from twilio
 client = Client(account_sid, auth_token)
 sched = BlockingScheduler()
 def TwilioSend(massage):
     message = client.messages.create( 
-                                from_='whatsapp:+14155238886',  
+                                from_='whatsapp:+1*********',  # twilio number 
                                 body=massage,      
-                                to='whatsapp:+917550365724' #enter your twilio number
+                                to='whatsapp:+91**********' #enter your twilio number
                             ) 
     
     print(message.sid)
